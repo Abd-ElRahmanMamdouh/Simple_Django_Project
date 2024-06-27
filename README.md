@@ -30,6 +30,9 @@ python manage.py createsuperuser
 
 Simple CRUD Operations for book table.
 
+### Dynamic URL Parameter Page
+
+Simple page to display Multiplication Table for any given number in the url parameter (?number=1).
 
 
 ### Django Messages with sweet alert
