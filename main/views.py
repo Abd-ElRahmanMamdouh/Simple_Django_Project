@@ -72,5 +72,5 @@ def dynamic_url_parameter(request):
         multi_table = multiplication_table(int(number))
     else:
         multi_table = None
-    context = {"multi_table": multi_table, "number": number}
+    context = {"multi_table": multi_table, "number": number, "active": "numbers"}
     return render(request, "main/dynamic_parameter.html", context)
