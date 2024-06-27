@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+     {{ book }}
+{% endblock %}
+{% block content %}
+
+<div class="d-flex flex-row align-items-center">
+    <div class="container mt-5">
+        <a class="btn btn-primary" href="{% url 'main:home' %}"><i class="fa-solid fa-house fa-lg"></i></a>
+        <a class="btn btn-success" href="{% url 'main:book_create' %}">Create New Book</a>
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <img src="{% if book.image %}{{ book.image.url }}{% else %}{% static 'img/no-image.jpg' %}{% endif %}" class="card-img-top" alt="{{ book.title }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ book.title }}</h5>
+                      <p class="card-text">Author: {{ book.author }}</p>
+                      <p class="card-text">Created By: {% if book.created_by %}{{ book.created_by }}{% else %} Anonymous user{% endif %}</p>
+                      <p class="card-text">Created At: {{ book.created_at }}</p>
+                      <p class="card-text">Last Updated: {{ book.updated_at }}</p>
+                      <a href="{% url 'main:book_delete' book.pk %}" class="btn btn-danger">Delete Book</a>
+                      <a href="{% url 'main:book_update' book.pk %}" class="btn btn-primary">Update Book</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

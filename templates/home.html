@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+
+
+<div class="d-flex flex-row align-items-center" style="min-height: 80vh;">
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h1 class="display-1">Hello</h1>
+                <p class="lead">This is a simple django project</p>
+                <a href="{% url 'main:book_list' %}" class="btn btn-primary">CRUD Operations Page</a>
+                <a href="#" class="btn btn-success">Dynamic URL Parameter Page</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

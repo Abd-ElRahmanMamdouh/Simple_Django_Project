@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Dynamic URL Parameter Page
+{% endblock %}
+{% block content %}
+
+<div class="d-flex flex-row align-items-center">
+    <div class="container mt-5">
+        <a class="btn btn-primary" href="{% url 'main:home' %}"><i class="fa-solid fa-house fa-lg"></i></a>
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Multiplication Table For {{ number }}</h5>
+                      <p class="text-info">Change number parameter to get other tables.</p>
+                      {% if multi_table %}
+                      <p class="card-text"> {% for line in multi_table %}{{ line }} <br> {% endfor %}</p>
+                      {% else %}
+                      <p class="text-danger">number parameter must be a number</p>
+                      {% endif %}
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
