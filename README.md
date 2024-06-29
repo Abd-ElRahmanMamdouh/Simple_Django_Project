@@ -7,7 +7,7 @@ This is a Simple Django project.
 You can download the repo or clone it using git clone.
 
 ```bash
-git clone https://gitlab.com/Abdelrahman237/starting_project.git .
+git clone https://github.com/Abd-ElRahmanMamdouh/Simple_Django_Project.git .
 ```
 
 ## Requirements
